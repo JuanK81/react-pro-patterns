@@ -3,7 +3,7 @@ import {
   ProductImage,
   ProductTitle,
   ProductButtons,
-} from '../components/ProductCard';
+} from '../components';
 
 const product = {
   id: '1',
@@ -37,4 +37,4 @@ export const ShoppingPage = (): JSX.Element => {
       </div>
     </div>
   );
-};
+}
