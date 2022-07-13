@@ -1,22 +1,39 @@
-import { ProductCard } from '../components/ProductCard';
+import {
+  ProductCard,
+  ProductImage,
+  ProductTitle,
+  ProductButtons,
+} from '../components/ProductCard';
 
 const product = {
   id: '1',
   title: 'Coffee Mug - Card',
-  img: './coffee-mug.png'
-}
+  img: './coffee-mug.png',
+};
 
 export const ShoppingPage = (): JSX.Element => {
   return (
     <div>
       <h1>Shopping Store</h1>
       <hr />
-      <div style={{
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap:  'wrap'
-      }}>
-        <ProductCard product={ product }/>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+        }}
+      >
+        <ProductCard product={product}>
+          <ProductCard.Image />
+          <ProductCard.Title title={'cafe'} />
+          <ProductCard.Buttons />
+        </ProductCard>
+
+        <ProductCard product={product}>
+          <ProductImage />
+          <ProductTitle />
+          <ProductButtons />
+        </ProductCard>
       </div>
     </div>
   );
