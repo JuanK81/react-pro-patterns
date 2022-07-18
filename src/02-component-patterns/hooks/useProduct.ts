@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { onChangeArgs, Product } from '../interfaces/interfaces';
 
 interface Hook {
@@ -16,13 +16,8 @@ export const useProduct = ({ onChange, product, value = 0 }: useProductArgs): Ho
   
   const [counter, setCounter] = useState<number>( value );
 
-  const isControlled = useRef( !!onChange )
 
   const increaseBy = (value: number): void => {
-
-    if( isControlled.current ) {
-      return onChange!({ count: value, product });
-    }
 
     const newValue = Math.max(counter + value, 0);
 
